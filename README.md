@@ -29,3 +29,17 @@
 	    fmt.Scan(&end)
 
 	    toWork(start, end)
+	    
+	    
+   	func toWork(start, end int) {
+		fmt.Printf("正在爬取 %d 到 %d 页...\n", start, end)
+
+		page := make(chan int)
+		for i := start; i <= end; i++ {
+			go SpiderPage(i, page)
+		}
+
+		for i := start; i <= end; i++ {
+			fmt.Printf("第 %d 页爬取完毕\n", <-page)
+		}
+	}
