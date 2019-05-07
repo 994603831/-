@@ -34,7 +34,7 @@ func HttpGet(url string) (result string, err error) {
 }
 
 func SaveJokeToFile(idx int, fileTile, fileContent []string) {
-	path := "F:/GoProject/src/GoStudty/复习/爬虫/04.爬取段子/01.段子爬虫/" + "第 " + strconv.Itoa(idx) + " 页.txt"
+	path := "D:/GoProject/src/爬虫/爬取搞笑段子/" + "第 " + strconv.Itoa(idx) + " 页.txt"
 	f, err := os.Create(path)
 	if err != nil {
 		fmt.Println("Create err: ", err)
